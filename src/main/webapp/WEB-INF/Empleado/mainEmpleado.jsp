@@ -24,7 +24,7 @@
                     <th>Apellido paterno</th>
                     <th>Apellido materno</th>
                     <th>Cargo</th>
-                    <th colspan="2"><a href="url">Crear</a></th>
+                    <th colspan="2"><a href="viewcreateE">Crear</a></th>
                 </tr>
                 <%
                     ArrayList<Empleado> listaEmpleados = new EmpleadoDAO().tolist();
@@ -36,8 +36,8 @@
                     <td><%=e.getApaterno()%></td>
                     <td><%=e.getAmaterno()%></td>
                     <td><%=e.getCargo()%></td>
-                    <td><a href="url">Editar</a></td>
-                    <td><a href="url">Eliminar</a></td>
+                    <td><a href="viewupdateE?id=<%=e.getIdempleado()%>">Editar</a></td>
+                    <td><a href="viewdeleteE?id=<%=e.getIdempleado()%>">Eliminar</a></td>
                 </tr>
                 <%}%>
             </table>

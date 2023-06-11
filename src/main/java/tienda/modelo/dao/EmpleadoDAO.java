@@ -2,8 +2,6 @@ package tienda.modelo.dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import tienda.conexion.Conexion;
 import tienda.helper.InterfaceCRUD;
 import tienda.modelo.bean.Empleado;
@@ -68,7 +66,7 @@ public class EmpleadoDAO extends Conexion implements InterfaceCRUD<Empleado> {
                 empleado = new Empleado(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(EmpleadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error al obtener los datos del empleado. \nDetalles: " + ex.getMessage());
         }
         return empleado;
     }
@@ -86,7 +84,7 @@ public class EmpleadoDAO extends Conexion implements InterfaceCRUD<Empleado> {
             ps.setInt(5, e.getIdempleado());
             ps.executeUpdate();
         } catch (SQLException ex) {
-            System.out.println("Error al actualizar un empleado. \nDetalles: " + ex.getMessage());
+            System.out.println("Error al actualizar los datos del empleado. \nDetalles: " + ex.getMessage());
         } finally {
             close(cn);
             close(ps);
@@ -103,7 +101,7 @@ public class EmpleadoDAO extends Conexion implements InterfaceCRUD<Empleado> {
             ps.setInt(1, e.getIdempleado());
             ps.executeUpdate();
         } catch (SQLException ex) {
-            System.out.println("Error al actualizar un empleado. \nDetalles: " + ex.getMessage());
+            System.out.println("Error al eliminar el empleado. \nDetalles: " + ex.getMessage());
         } finally {
             close(cn);
             close(ps);

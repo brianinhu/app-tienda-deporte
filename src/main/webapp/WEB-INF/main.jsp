@@ -24,9 +24,9 @@
         <div><span><%=empleado.getNombre()%> <%=empleado.getApaterno()%></span><span><%=empleado.getCargo()%></span><span><a href="logout">Cerrar sesión</a></span></div>
         <ul>
             <li><a href="mainEmpleado">Sección empleados</a></li>
-            <li><a href="url">Sección articulos</a></li>
-            <li><a href="url">Sección clientes</a></li>
-            <li><a href="url">Sección pedidos</a></li>
+            <li><a href="#">Sección articulos</a></li>
+            <li><a href="#">Sección clientes</a></li>
+            <li><a href="#">Sección pedidos</a></li>
         </ul>
     </body>
 </html>

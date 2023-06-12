@@ -12,12 +12,20 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <p>Administración de la tienda deporte</p>
-        <ul>
-            <li><a href="mainEmpleado">Sección empleados</a></li>
-            <li><a href="url">Sección articulos</a></li>
-            <li><a href="url">Sección clientes</a></li>
-            <li><a href="url">Sección pedidos</a></li>
-        </ul>
+        <form class="container" action="login">
+            <table>
+                <tr>
+                    <td>Usuario:</td>
+                    <td><input type="text" name="txtuser"></td>
+                </tr>
+                <tr>
+                    <td>Contraseña:</td>
+                    <td><input type="text" name="txtpass"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Ingresar"></td>
+                </tr>
+            </table>
+        </form>
     </body>
 </html>

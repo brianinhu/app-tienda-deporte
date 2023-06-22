@@ -1,6 +1,6 @@
 <%-- 
-    Document   : main
-    Created on : 12 jun. 2023, 11:08:38
+    Document   : updateArticulo
+    Created on : 22 jun. 2023, 06:07:28
     Author     : Brian
 --%>
 
@@ -13,7 +13,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <style>
             header {
@@ -23,7 +23,7 @@
                 color: #fff;
                 font-weight: bold;
             }
-            
+
             nav {
                 display: flex;
                 justify-content: space-around;
@@ -31,12 +31,12 @@
                 background-color: darkcyan;
                 color: #fff;
             }
-            
+
             nav a {
                 text-decoration: none;
                 color: #fff;
             }
-            
+
             ul {
                 display: flex;
                 justify-content: center;
@@ -46,7 +46,7 @@
                 margin: 0;
                 background-color: #b3daff;
             }
-            
+
             ul a {
                 display: inline-block;
                 text-decoration: none;
@@ -54,9 +54,13 @@
                 padding: 0.5rem;
                 background-color: #b3daff;
             }
-            
+
             ul a:hover {
                 background-color: #0084ff;
+            }
+
+            .table {
+                text-align: center;
             }
         </style>
     </head>

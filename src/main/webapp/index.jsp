@@ -40,33 +40,41 @@
                 margin: 0;
                 padding: 0.5rem 0;
             }
-            
+
             .pcenter {
                 text-align: center;
             }
-            
+
             #divimg {
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
-            
+
             input {
                 width: inherit;
             }
             
+            #msjError {
+                color: red;
+            }
+
         </style>
     </head>
     <body>
+        <%
+        String mensajeError = (String) request.getAttribute("msg");
+        %>
         <form class="container" action="login" method="post">
             <div class="row">
-                <p class="pcenter">Log in</p>
+                <p class="pcenter">Iniciar Sesión</p>
                 <div id="divimg"><img src="https://www.freeiconspng.com/uploads/user-login-icon-29.png" alt="imagen" width="100"/></div>
                 <p>Usuario</p>
                 <p><input type="text" name="txtuser"></p>
                 <p>Contraseña</p>
                 <p><input type="password" name="txtpass"></p>
                 <p class="pcenter"><input class="btn btn-primary" type="submit" value="Ingresar"></p>
+                <p class="pcenter" id="msjError"><%=mensajeError!=null?mensajeError:""%></p>
             </div>
         </form>
     </body>

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import tienda.modelo.bean.Articulo;
 import tienda.modelo.dao.ArticuloDAO;
 
-@WebServlet(name = "SvArticulo", urlPatterns = {"/SvArticulo", "/mainArticulo", "/viewCreateA", "/createA"})
+@WebServlet(name = "SvArticulo", urlPatterns = {"/SvArticulo", "/mainArticulo", "/viewCreateA", "/createA", "/viewUpdateA", "/updateA", "/deleteA"})
 public class SvArticulo extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -27,6 +27,15 @@ public class SvArticulo extends HttpServlet {
                 break;
             case "/createA":
                 createA(request, response);
+                break;
+            case "/viewUpdateA":
+                request.getRequestDispatcher("WEB-INF/Articulo/updateArticulo.jsp").forward(request, response);
+                break;
+            case "/updateA":
+                updateA(request, response);
+                break;
+            case "/deleteA":
+                deleteA(request, response);
                 break;
         }
 
@@ -77,9 +86,33 @@ public class SvArticulo extends HttpServlet {
         String descripcion = request.getParameter("txtdescripcion");
         float precio = Float.parseFloat(request.getParameter("txtprecio"));
         String foto = request.getParameter("txtfoto");
+
         Articulo articulo = new Articulo(0, nombre, descripcion, precio, foto, idcategoria);
-      
         new ArticuloDAO().create(articulo);
+
+        response.sendRedirect("mainArticulo");
+    }
+
+    private void updateA(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int idarticulo = Integer.parseInt(request.getParameter("txtidarticulo"));
+        String nombre = request.getParameter("txtnombre");
+        String descripcion = request.getParameter("txtdescripcion");
+        float precio = Float.parseFloat(request.getParameter("txtprecio"));
+        String foto = request.getParameter("txtfoto");
+        int idcategoria = Integer.parseInt(request.getParameter("cbxCategoria"));
+
+        Articulo a = new Articulo(idarticulo, nombre, descripcion, precio, foto, idcategoria);
+        new ArticuloDAO().update(a);
+
+        response.sendRedirect("mainArticulo");
+    }
+
+    private void deleteA(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int idarticulo = Integer.parseInt(request.getParameter("id"));
+        Articulo a = new Articulo();
+        a.setIdarticulo(idarticulo);
+        
+        new ArticuloDAO().delete(a);
         response.sendRedirect("mainArticulo");
     }
 

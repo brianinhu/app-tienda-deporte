@@ -1,14 +1,12 @@
-
 package tienda.modelo.dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import tienda.conexion.Conexion;
 import tienda.helper.InterfaceCRUD;
-import tienda.modelo.bean.Articulo;
 import tienda.modelo.bean.Categoria;
 
-public class CategoriaDAO extends Conexion implements InterfaceCRUD<Categoria>{
+public class CategoriaDAO extends Conexion implements InterfaceCRUD<Categoria> {
 
     @Override
     public ArrayList<Categoria> tolist() {
@@ -19,7 +17,7 @@ public class CategoriaDAO extends Conexion implements InterfaceCRUD<Categoria>{
             cn = getConnection();
             ps = cn.prepareStatement(sentence);
             rs = ps.executeQuery();
-            while (rs.next()) {                
+            while (rs.next()) {
                 categoria = new Categoria(rs.getInt(1), rs.getString(2));
                 listaCategoria.add(categoria);
             }
@@ -40,7 +38,24 @@ public class CategoriaDAO extends Conexion implements InterfaceCRUD<Categoria>{
 
     @Override
     public Categoria read(Categoria e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Categoria categoria = null;
+        String sentence = "select * from categoria where idcategoria = ?";
+        try {
+            cn = getConnection();
+            ps = cn.prepareStatement(sentence);
+            ps.setInt(1, e.getIdcategoria());
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                categoria = new Categoria(rs.getInt(1), rs.getString(2));
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error al buscar la categoria. \nDetalles: " + ex.getMessage());
+        } finally {
+            close(cn);
+            close(ps);
+            close(rs);
+        }
+        return categoria;
     }
 
     @Override
@@ -52,5 +67,5 @@ public class CategoriaDAO extends Conexion implements InterfaceCRUD<Categoria>{
     public void delete(Categoria e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
 }

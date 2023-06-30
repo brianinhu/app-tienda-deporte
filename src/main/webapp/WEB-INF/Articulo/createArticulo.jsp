@@ -18,7 +18,15 @@
         <title>JSP Page</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <style>
+            body {
+                font-family: 'Poppins', sans-serif;
+            }
+
             header {
                 background-color: darkkhaki;
                 text-align: center;
@@ -27,7 +35,7 @@
                 font-weight: bold;
             }
 
-            nav {
+            #nav1 {
                 display: flex;
                 justify-content: space-around;
                 padding: 0.5rem 0;
@@ -35,7 +43,7 @@
                 color: #fff;
             }
 
-            nav a {
+            #nav1 a {
                 text-decoration: none;
                 color: #fff;
             }
@@ -62,11 +70,42 @@
                 background-color: #0084ff;
             }
 
-            .table {
+            h2 {
                 text-align: center;
+                font-weight: 700;
+                margin: 0;
+                padding: 1rem 0;
+            }
+
+            .container {
+                margin-top: 1rem;
+            }
+
+            .form {
+                width: 500px;
+                padding: 2rem;
+            }
+
+            .btn-success {
+                width: 10rem;
+            }
+            
+            #floatingInput2 {
+                height: 95px;
+            }
+            
+            #floatingInput3 {
+                width: 30%;
+            }
+            
+            #floatingInput4 {
+                width: 50%;
+            }
+            
+            .form-floating {
+                color: #6C757D;
             }
         </style>
-
     </head>
     <body>
         <%
@@ -75,37 +114,54 @@
             empleado = new EmpleadoDAO().read(empleado);
         %>
         <header>Administración de la tienda deporte</header>
-        <nav><span><%=empleado.getNombre()%> <%=empleado.getApaterno()%></span><span><%=empleado.getCargo()%></span><span><a href="logout">Cerrar sesión</a></span></nav>
-        <section>
+        <nav id="nav1">
+            <span><i class="bi bi-person-circle"></i> <%=empleado.getNombre()%> <%=empleado.getApaterno()%></span>
+            <span><i class="bi bi-briefcase-fill"></i> <%=empleado.getCargo()%>
+            </span><span><a href="logout"><i class="bi bi-box-arrow-left"></i> Cerrar sesión</a></span>
+        </nav>
+        <nav id="nav2">
             <ul>
                 <li><a href="mainEmpleado">Sección empleados</a></li>
-                <li><a href="mainArticulo">Sección articulos</a></li>
+                <li><a href="mainArticulo">Sección artículos</a></li>
                 <li><a href="#">Sección clientes</a></li>
                 <li><a href="#">Sección pedidos</a></li>
             </ul>
+        </nav>
+        <section>
+            <form class="form form-control container" action="createA" method="post">
+                <h2>REGISTRO DE ARTÍCULOS</h2>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput1" name="txtnombre" placeholder="@">
+                    <label for="floatingInput1">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <select id="cbxCategoria" class="form-select" name="cbxCategoria">
+                        <option value="0"></option>
+                        <%
+                            ArrayList<Categoria> listaCategoria = new CategoriaDAO().tolist();
+                            for (Categoria c : listaCategoria) {
+                        %>
+                        <option value=<%=c.getIdcategoria()%>><%=c.getCategoria()%></option>
+                        <%}%>
+                    </select>
+                    <label for="cbxCategoria">Categoría</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="floatingInput2" name="txtdescripcion"></textarea>
+                    <label for="floatingInput2">Descripción</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput3" name="txtprecio" placeholder="@">
+                    <label for="floatingInput3">Precio</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput4" name="txtfoto" placeholder="@">
+                    <label for="floatingInput4">Foto</label>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <input class="btn btn-success" type="submit" value="Agregar">
+                </div>
+            </form>
         </section>
-
-        
-        <form class="container" action="createA" method="post">
-            <h3>Ingrese los datos del artículo</h3>
-            <p>Nombre: </p>
-            <input type="text" name="txtnombre">
-            <p>Categoria: </p>
-            <select name="cbxCategoria">
-                <%
-                    ArrayList<Categoria> listaCategoria = new CategoriaDAO().tolist();
-                    for (Categoria c : listaCategoria) {
-                %>
-                <option value=<%=c.getIdcategoria()%>><%=c.getCategoria()%></option>
-                <%}%>
-            </select>
-            <p>Descripcion: </p>
-            <input type="text" name="txtdescripcion">
-            <p>Precio: </p>
-            <input type="text" name="txtprecio">
-            <p>Foto: </p>
-            <input type="text" name="txtfoto">
-            <p><input type="submit" name="Agregar"></p>
-        </form>
     </body>
 </html>

@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 import tienda.modelo.bean.Empleado;
 import tienda.modelo.dao.EmpleadoDAO;
 
-@WebServlet(name = "SvEmpleado", urlPatterns = {"/SvEmpleado", "/mainEmpleado", "/viewcreateE", "/createE", "/viewupdateE", "/updateE", "/viewdeleteE"})
+@WebServlet(name = "SvEmpleado", urlPatterns = {"/SvEmpleado", "/mainEmpleado", "/viewcreateE", "/createE", "/viewupdateE", "/updateE", "/deleteE"})
 public class SvEmpleado extends HttpServlet {
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String path = request.getServletPath();
-        
+
         switch (path) {
             case "/mainEmpleado":
                 request.getRequestDispatcher("WEB-INF/Empleado/mainEmpleado.jsp").forward(request, response);
@@ -33,7 +33,7 @@ public class SvEmpleado extends HttpServlet {
             case "/updateE":
                 updateE(request, response);
                 break;
-            case "/viewdeleteE":
+            case "/deleteE":
                 deleteE(request, response);
                 break;
         }
@@ -83,10 +83,10 @@ public class SvEmpleado extends HttpServlet {
         String apaterno = request.getParameter("txtapaterno");
         String amaterno = request.getParameter("txtamaterno");
         String cargo = request.getParameter("txtcargo");
-        
+
         Empleado e = new Empleado(0, nombre, apaterno, amaterno, cargo);
         new EmpleadoDAO().create(e);
-        
+
         response.sendRedirect("mainEmpleado");
     }
 
@@ -96,10 +96,10 @@ public class SvEmpleado extends HttpServlet {
         String apaterno = request.getParameter("txtapaterno");
         String amaterno = request.getParameter("txtamaterno");
         String cargo = request.getParameter("txtcargo");
-        
+
         Empleado e = new Empleado(idempleado, nombre, apaterno, amaterno, cargo);
         new EmpleadoDAO().update(e);
-        
+
         response.sendRedirect("mainEmpleado");
     }
 
@@ -108,8 +108,8 @@ public class SvEmpleado extends HttpServlet {
         Empleado e = new Empleado();
         e.setIdempleado(idempleado);
         new EmpleadoDAO().delete(e);
-        
+
         response.sendRedirect("mainEmpleado");
     }
-    
+
 }

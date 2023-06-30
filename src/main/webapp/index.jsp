@@ -15,6 +15,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <style>
             body {
                 min-height: 100vh;
@@ -29,10 +30,11 @@
                 padding: 1rem;
                 width: 500px;
                 height: 500px;
-                border: 1px solid black;
+                border-radius: 10px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                background-color: #00e6ac;
             }
 
             .table {
@@ -45,11 +47,17 @@
                 padding: 0.5rem 0;
             }
 
-            .pcenter {
+            .center {
                 text-align: center;
             }
+            
+            #img {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
 
-            #divimg {
+            .row {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -62,7 +70,20 @@
             #msjError {
                 color: red;
             }
-
+            
+            .input-group {
+                width: 300px;
+            }
+            
+            .btn {
+                width: 50%;
+            }
+            
+            h3 {
+                color: #FFF;
+                font-weight: 700;
+            }
+            
         </style>
     </head>
     <body>
@@ -71,14 +92,18 @@
         %>
         <form class="container" action="login" method="post">
             <div class="row">
-                <p class="pcenter">Iniciar Sesión</p>
-                <div id="divimg"><img src="https://www.freeiconspng.com/uploads/user-login-icon-29.png" alt="imagen" width="100"/></div>
-                <p>Usuario</p>
-                <p><input type="text" name="txtuser"></p>
-                <p>Contraseña</p>
-                <p><input type="password" name="txtpass"></p>
-                <p class="pcenter"><input class="btn btn-primary" type="submit" value="Ingresar"></p>
-                <p class="pcenter" id="msjError"><%=mensajeError != null ? mensajeError : ""%></p>
+                <h3 class="center">INICIO DE SESIÓN</h3>
+                <div id="img"><img width="100" src="img/loginimage.png" alt="imagen"/></div>
+                <div class="input-group flex-nowrap mt-3">
+                    <span class="input-group-text" id="addon-wrapping"><i class="bi bi-person-circle"></i></span>
+                    <input type="text" name="txtuser" class="form-control" placeholder="Usuario" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap mt-3">
+                    <span class="input-group-text" id="addon-wrapping"><i class="bi bi-key-fill"></i></span>
+                    <input type="password" name="txtpass" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+                <p class="center"><input class="btn btn-primary mt-3" type="submit" value="Ingresar"></p>
+                <p class="center" id="msjError"><%=mensajeError != null ? mensajeError : ""%></p>
             </div>
         </form>
     </body>

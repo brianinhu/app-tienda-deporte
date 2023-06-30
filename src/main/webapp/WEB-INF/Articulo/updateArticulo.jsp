@@ -124,8 +124,6 @@
             <ul>
                 <li><a href="mainEmpleado">Sección empleados</a></li>
                 <li><a href="mainArticulo">Sección artículos</a></li>
-                <li><a href="#">Sección clientes</a></li>
-                <li><a href="#">Sección pedidos</a></li>
             </ul>
         </nav>
         <section>

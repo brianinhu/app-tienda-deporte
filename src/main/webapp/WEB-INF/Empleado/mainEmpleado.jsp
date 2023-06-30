@@ -110,8 +110,6 @@
             <ul>
                 <li><a href="mainEmpleado">Sección empleados</a></li>
                 <li><a href="mainArticulo">Sección articulos</a></li>
-                <li><a href="#">Sección clientes</a></li>
-                <li><a href="#">Sección pedidos</a></li>
             </ul>
         </nav>
         <section>
@@ -147,6 +145,7 @@
 
             function confirmacion() {
                 if (confirm("¿Está seguro que desea eliminar al empleado?")) {
+                    alert("¡Empleado eliminado correctamente!");
                     return true;
                 }
                 return false;

@@ -111,8 +111,6 @@
             <ul>
                 <li><a href="mainEmpleado">Sección empleados</a></li>
                 <li><a href="mainArticulo">Sección articulos</a></li>
-                <li><a href="#">Sección clientes</a></li>
-                <li><a href="#">Sección pedidos</a></li>
             </ul>
         </nav>
         <section>
@@ -147,7 +145,7 @@
         <script>
             function confirmacion() {
                 if (confirm("¿Está seguro que desea eliminar el artículo?")) {
-                    alert("Artículo eliminado correctamente");
+                    alert("¡Artículo eliminado correctamente!");
                     return true;
                 }
                 return false;

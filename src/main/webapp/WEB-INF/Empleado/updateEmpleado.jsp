@@ -66,6 +66,30 @@
             ul a:hover {
                 background-color: #0084ff;
             }
+
+            h2 {
+                text-align: center;
+                font-weight: 700;
+                margin: 0;
+                padding: 1rem 0;
+            }
+
+            .container {
+                margin-top: 1rem;
+            }
+
+            .form {
+                width: 500px;
+                padding: 2rem;
+            }
+
+            .btn-success {
+                width: 10rem;
+            }
+
+            .form-floating {
+                color: #6C757D;
+            }
         </style>
     </head>
     <body>
@@ -84,8 +108,6 @@
             <ul>
                 <li><a href="mainEmpleado">Sección empleados</a></li>
                 <li><a href="mainArticulo">Sección articulos</a></li>
-                <li><a href="#">Sección clientes</a></li>
-                <li><a href="#">Sección pedidos</a></li>
             </ul>
         </nav>
 
@@ -95,30 +117,30 @@
             e.setIdempleado(idempleado);
             e = new EmpleadoDAO().read(e);
         %>
-        <h3>Actualice los datos del empleado</h3>
-        <form class="container" action="updateE" method="post">
-            <input type="hidden" name="txtidempleado" value="<%=e.getIdempleado()%>">
-            <table>    
-                <tr>
-                    <td>Nombre: </td>
-                    <td><input type="text" name="txtnombre" value="<%=e.getNombre()%>"></td>
-                </tr>
-                <tr>
-                    <td>Apellido paterno: </td>
-                    <td><input type="text" name="txtapaterno" value="<%=e.getApaterno()%>"></td>
-                </tr>
-                <tr>
-                    <td>Apellido materno: </td>
-                    <td><input type="text" name="txtamaterno" value="<%=e.getAmaterno()%>"></td>
-                </tr>
-                <tr>
-                    <td>Cargo: </td>
-                    <td><input type="text" name="txtcargo" value="<%=e.getCargo()%>"></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="submit" value="Actualizar"></td>
-                </tr>
-            </table>
-        </form>
+        <section>
+            <form class="form form-control container" action="updateE" method="post">
+                <h2>EDICIÓN DE EMPLEADOS</h2>
+                <input type="hidden" name="txtidempleado" value="<%=e.getIdempleado()%>">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput1" name="txtnombre" placeholder="@" value="<%=e.getNombre()%>">
+                    <label for="floatingInput1">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput2" name="txtapaterno" placeholder="@" value="<%=e.getApaterno()%>">
+                    <label for="floatingInput2">Apellido paterno</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput3" name="txtamaterno" placeholder="@" value="<%=e.getAmaterno()%>">
+                    <label for="floatingInput3">Apellido materno</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput4" name="txtcargo" placeholder="@" value="<%=e.getCargo()%>">
+                    <label for="floatingInput4">Cargo</label>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <input class="btn btn-success" type="submit" value="Actualizar">
+                </div>
+            </form>
+        </section>
     </body>
 </html>

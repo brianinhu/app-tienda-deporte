@@ -13,11 +13,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700;900&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <style>
             body {
                 font-family: 'Poppins', sans-serif;
@@ -65,6 +67,16 @@
             ul a:hover {
                 background-color: #0084ff;
             }
+            
+            .container {
+                padding-bottom: 1rem;
+            }
+
+            #logout {
+                background-color: #ff6666;
+                border: 5px solid #ff6666;
+                border-radius: 5px;
+            }
         </style>
     </head>
     <body>
@@ -75,14 +87,14 @@
         %>
         <header>Administración de la tienda deporte</header>
         <nav id="nav1">
-            <span><%=empleado.getNombre()%> <%=empleado.getApaterno()%></span><span><%=empleado.getCargo()%></span><span><a href="logout">Cerrar sesión</a></span>
+            <span><i class="bi bi-person-circle"></i> <%=empleado.getNombre()%> <%=empleado.getApaterno()%></span>
+            <span><i class="bi bi-briefcase-fill"></i> <%=empleado.getCargo()%></span>
+            <span><a id="logout" href="logout"><i class="bi bi-box-arrow-left"></i> Cerrar sesión</a></span>
         </nav>
         <nav id="nav2">
             <ul>
                 <li><a href="mainEmpleado">Sección empleados</a></li>
                 <li><a href="mainArticulo">Sección articulos</a></li>
-                <li><a href="#">Sección clientes</a></li>
-                <li><a href="#">Sección pedidos</a></li>
             </ul>
         </nav>
     </body>

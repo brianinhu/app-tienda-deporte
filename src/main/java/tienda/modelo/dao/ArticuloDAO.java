@@ -2,8 +2,6 @@ package tienda.modelo.dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import tienda.conexion.Conexion;
 import tienda.helper.InterfaceCRUD;
 import tienda.modelo.bean.Articulo;
@@ -67,7 +65,7 @@ public class ArticuloDAO extends Conexion implements InterfaceCRUD<Articulo> {
                 articulo = new Articulo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getFloat(4), rs.getString(5), rs.getInt(6));
             }
         } catch (SQLException ex) {
-            System.out.println("Error al listar todos los articulos. \nDetalles: " + ex.getMessage());
+            System.out.println("Error al leer el articulo. \nDetalles: " + ex.getMessage());
         } finally {
             close(cn);
             close(ps);

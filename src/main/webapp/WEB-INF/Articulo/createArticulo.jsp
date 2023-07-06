@@ -134,7 +134,6 @@
                 </div>
                 <div class="form-floating mb-3">
                     <select id="cbxCategoria" class="form-select" name="cbxCategoria">
-                        <option value="0"></option>
                         <%
                             ArrayList<Categoria> listaCategoria = new CategoriaDAO().tolist();
                             for (Categoria c : listaCategoria) {

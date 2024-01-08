@@ -86,6 +86,12 @@
             .btn-success {
                 width: 10rem;
             }
+            
+            #logout {
+                background-color: red;
+                border: 5px solid red;
+                border-radius: 5px;
+            }
         </style>
     </head>
     <body>
@@ -98,7 +104,7 @@
         <nav id="nav1">
             <span><i class="bi bi-person-circle"></i> <%=empleado.getNombre()%> <%=empleado.getApaterno()%></span>
             <span><i class="bi bi-briefcase-fill"></i> <%=empleado.getCargo()%>
-            </span><span><a href="logout"><i class="bi bi-box-arrow-left"></i> Cerrar sesión</a></span>
+            </span><span><a id="logout" href="logout"><i class="bi bi-box-arrow-left"></i> Cerrar sesión</a></span>
         </nav>
         <nav id="nav2">
             <ul>

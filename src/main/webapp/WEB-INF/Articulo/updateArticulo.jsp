@@ -23,6 +23,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <style>
             body {
                 font-family: 'Poppins', sans-serif;
@@ -106,6 +107,12 @@
             .form-floating {
                 color: #6C757D;
             }
+            
+            #logout {
+                background-color: red;
+                border: 5px solid red;
+                border-radius: 5px;
+            }
         </style>
     </head>
     <body>
@@ -117,8 +124,8 @@
         <header>Administración de la tienda deporte</header>
         <nav id="nav1">
             <span><i class="bi bi-person-circle"></i> <%=empleado.getNombre()%> <%=empleado.getApaterno()%></span>
-            <span><i class="bi bi-briefcase-fill"></i> <%=empleado.getCargo()%>
-            </span><span><a href="logout"><i class="bi bi-box-arrow-left"></i> Cerrar sesión</a></span>
+            <span><i class="bi bi-briefcase-fill"></i> <%=empleado.getCargo()%></span>
+            <span><a id="logout" href="logout"><i class="bi bi-box-arrow-left"></i> Cerrar sesión</a></span>
         </nav>
         <nav id="nav2">
             <ul>

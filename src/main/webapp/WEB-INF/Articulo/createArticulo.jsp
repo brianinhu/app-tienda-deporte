@@ -89,21 +89,27 @@
             .btn-success {
                 width: 10rem;
             }
-            
+
             #floatingInput2 {
                 height: 95px;
             }
-            
+
             #floatingInput3 {
                 width: 30%;
             }
-            
+
             #floatingInput4 {
                 width: 50%;
             }
-            
+
             .form-floating {
                 color: #6C757D;
+            }
+
+            #logout {
+                background-color: red;
+                border: 5px solid red;
+                border-radius: 5px;
             }
         </style>
     </head>
@@ -116,8 +122,8 @@
         <header>Administración de la tienda deporte</header>
         <nav id="nav1">
             <span><i class="bi bi-person-circle"></i> <%=empleado.getNombre()%> <%=empleado.getApaterno()%></span>
-            <span><i class="bi bi-briefcase-fill"></i> <%=empleado.getCargo()%>
-            </span><span><a href="logout"><i class="bi bi-box-arrow-left"></i> Cerrar sesión</a></span>
+            <span><i class="bi bi-briefcase-fill"></i> <%=empleado.getCargo()%></span>
+            <span><a id="logout" href="logout"><i class="bi bi-box-arrow-left"></i> Cerrar sesión</a></span>
         </nav>
         <nav id="nav2">
             <ul>

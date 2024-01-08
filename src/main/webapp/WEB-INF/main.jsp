@@ -73,8 +73,8 @@
             }
 
             #logout {
-                background-color: #ff6666;
-                border: 5px solid #ff6666;
+                background-color: red;
+                border: 5px solid red;
                 border-radius: 5px;
             }
         </style>

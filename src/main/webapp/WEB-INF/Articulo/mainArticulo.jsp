@@ -4,6 +4,8 @@
     Author     : Brian
 --%>
 
+<%@page import="tienda.modelo.dao.CategoriaDAO"%>
+<%@page import="tienda.modelo.bean.Categoria"%>
 <%@page import="tienda.modelo.dao.ArticuloDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="tienda.modelo.bean.Articulo"%>
@@ -89,8 +91,8 @@
             }
 
             #logout {
-                background-color: #ff6666;
-                border: 5px solid #ff6666;
+                background-color: red;
+                border: 5px solid red;
                 border-radius: 5px;
             }
         </style>
@@ -120,6 +122,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
+                        <th>Categoría</th>
                         <th>Descripción</th>
                         <th>Precio</th>
                         <th>Foto</th>
@@ -132,6 +135,11 @@
                     <tr>
                         <td><%=a.getIdarticulo()%></td>
                         <td><%=a.getNombre()%></td>
+                        <%
+                            Categoria c = new Categoria(a.getIdcategoria(), "");
+                            c = new CategoriaDAO().read(c);
+                        %>
+                        <td><%=c.getCategoria()%></td>
                         <td><%=a.getDescripcion()%></td>
                         <td><%=a.getPrecio()%></td>
                         <td><%=a.getFoto()%></td>

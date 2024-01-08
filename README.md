@@ -4,12 +4,12 @@
 
 Este proyecto es un CRUD (Create, Read, Update, Delete) que se realizó con JSP y Servlets, utilizando el patrón de diseño MVC (Modelo Vista Controlador).
 
-El proyecto consiste en una tienda de deportes, donde se pueden registrar productos, editarlos y eliminarlos. También se pueden registrar usuarios, editarlos y eliminarlos. Los usuarios pueden iniciar sesión y ver los productos registrados.
+El proyecto consiste en una tienda de deportes, donde se pueden registrar productos, editarlos y eliminarlos. También se pueden registrar empleados (usuarios) , editarlos y eliminarlos. Los empleados pueden iniciar sesión y ver los productos registrados.
 
 ## Esquema de la base de datos
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/brianinhu/app-tienda-deporte/master/database/schema-diagram/tiendadeporte.png" width="70%">
+    <img src="https://raw.githubusercontent.com/brianinhu/app-tienda-deporte/master/resources/schema-diagram/tiendadeporte.png" width="70%" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);">
 </div>
 
 ## Tecnologías
@@ -43,20 +43,24 @@ El proyecto consiste en una tienda de deportes, donde se pueden registrar produc
 
 ## Capturas de pantalla
 
+- Página de inicio
 <div align="center">
-    <img src="https://raw.githubusercontent.com/brianinhu/app-tienda-deporte/master/screenshots/1.png" width="70%">
+    <img src="https://raw.githubusercontent.com/brianinhu/app-tienda-deporte/master/resources/screenshots/1.png" width="70%" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);">
 </div>
 
+- Página principal del empleado
 <div align="center">
-    <img src="https://raw.githubusercontent.com/brianinhu/app-tienda-deporte/master/screenshots/2.png" width="70%">
+    <img src="https://raw.githubusercontent.com/brianinhu/app-tienda-deporte/master/resources/screenshots/2.png" width="70%" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);">
 </div>
 
+- Lista de empleados
 <div align="center">
-    <img src="https://raw.githubusercontent.com/brianinhu/app-tienda-deporte/master/screenshots/3.png" width="70%">
+    <img src="https://raw.githubusercontent.com/brianinhu/app-tienda-deporte/master/resources/screenshots/3.png" width="70%" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);">
 </div>
 
+- Lista de productos
 <div align="center">
-    <img src="https://raw.githubusercontent.com/brianinhu/app-tienda-deporte/master/screenshots/4.png" width="70%">
+    <img src="https://raw.githubusercontent.com/brianinhu/app-tienda-deporte/master/resources/screenshots/4.png" width="70%" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);">
 </div>
 
 ## Feedback o issues

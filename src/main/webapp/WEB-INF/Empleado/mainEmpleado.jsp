@@ -19,7 +19,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700;900&display=swap" rel="stylesheet">
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <style>
             body {
@@ -150,23 +149,6 @@
                 }
                 return false;
             }
-
-            /*
-             function confirmacion() {
-             swal({
-             title: "Está seguro que desea eliminar?",
-             icon: "warning",
-             buttons: true,
-             dangerMode: true
-             })
-             .then((willDelete) => {
-             if (willDelete) {
-             return true;
-             }
-             });
-             return false;
-             }
-             */
 
         </script>
     </body>

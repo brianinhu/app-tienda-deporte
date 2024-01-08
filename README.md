@@ -36,7 +36,7 @@ El proyecto consiste en una tienda de deportes, donde se pueden registrar produc
 
 1. Clonar o descargar el repositorio
 2. Crear la base de datos con el nombre `tiendadeporte` en MySQL.
-3. Importar el archivo `dbtiendadeporte.sql` que se encuentra en la carpeta `database`
+3. Importar el archivo `dbtiendadeporte.sql` que se encuentra en la carpeta `resources > database`
 4. Abrir el proyecto `app-tienda-deporte` en Apache NetBeans
 5. Configurar el archivo Conexion.java que se encuentra en el paquete `java > tienda > conexion` con los datos de su base de datos MySQL
 6. Ejecutar el proyecto y esperar hasta que abra la página automáticamente o abrir su browser e insertar la URL `http://localhost:8080/appTiendaDeporte/`

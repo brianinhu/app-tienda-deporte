@@ -39,7 +39,8 @@ El proyecto consiste en una tienda de deportes, donde se pueden registrar produc
 3. Importar el archivo `dbtiendadeporte.sql` que se encuentra en la carpeta `resources > database`
 4. Abrir el proyecto `app-tienda-deporte` en Apache NetBeans
 5. Configurar el archivo Conexion.java que se encuentra en el paquete `java > tienda > conexion` con los datos de su base de datos MySQL
-6. Ejecutar el proyecto y esperar hasta que abra la página automáticamente o abrir su browser e insertar la URL `http://localhost:8080/appTiendaDeporte/`
+6. Darle click a la opción "Clean and build project" para corregir cualquier problema de lectura de archivos js y css si hubiera.
+7. Ejecutar el proyecto y esperar hasta que abra la página automáticamente o abrir su browser e insertar la URL `http://localhost:8080/appTiendaDeporte/`
 
 ## Capturas de pantalla
 

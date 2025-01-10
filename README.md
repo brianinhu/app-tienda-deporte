@@ -63,7 +63,3 @@ El proyecto consiste en una tienda de deportes, donde se pueden registrar produc
 <div align="center">
     <img src="https://raw.githubusercontent.com/brianinhu/app-tienda-deporte/master/resources/screenshots/4.png" width="70%" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);">
 </div>
-
-## Feedback o issues
-
-Si encuentras algún error o tienes alguna sugerencia, puedes crear un issue o contactarme a mi correo electrónico: brianincah10@gmail.com
